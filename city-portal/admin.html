@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CityConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-layout {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            height: calc(100vh - 40px);
+        }
+
+        .admin-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 80vh;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .pending-item {
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .pending-item.high-priority {
+            border-left: 5px solid #ef4444;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            color: white;
+        }
+
+        .btn-approve {
+            background: #10b981;
+        }
+
+        .btn-reject {
+            background: #ef4444;
+        }
+
+        .btn-edit {
+            background: #3b82f6;
+        }
+
+        .ai-badge {
+            background: #8b5cf6;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <h1>CityConnect Admin</h1>
+            </div>
+            <div class="user-controls">
+                <span>Welcome, Admin</span>
+                <button id="logout-btn" class="btn-sm"
+                    style="background:none; color:black; border:1px solid #ddd;">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <div class="dashboard-grid">
+            <aside class="sidebar">
+                <h3>Navigation</h3>
+                <ul class="admin-nav">
+                    <li><a href="#" class="active"><i class="fas fa-inbox"></i> Pending Approvals</a></li>
+                    <li><a href="#"><i class="fas fa-check-circle"></i> Published News</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> User Management</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+                <div class="mt-4">
+                    <h3>AI Status</h3>
+                    <div class="stat-card">
+                        <p><strong>Service:</strong> <span style="color:green">Active</span></p>
+                        <p><strong>Monitoring:</strong> Villupuram</p>
+                        <p><strong>Last Scan:</strong> Just now</p>
+                    </div>
+                </div>
+            </aside>
+
+            <main id="admin-main" class="admin-content">
+                <h2>Pending Approvals</h2>
+                <div id="pending-news-container">
+                    <p>Loading pending items...</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline admin specific logic initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth(); // Ensure is admin
+            loadAdminNews();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Information Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Announcements Banner -->
+    <div id="announcement-banner" class="announcement-banner hidden">
+        <div class="container banner-content">
+            <span id="banner-icon" class="banner-icon"><i class="fas fa-exclamation-circle"></i></span>
+            <p id="banner-message">No active alerts.</p>
+            <button id="banner-close" class="banner-close">&times;</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <i class="fas fa-city fa-2x logo-icon"></i>
+                <div class="logo-text">
+                    <h1>CityConnect</h1>
+                    <p>Your Local Pulse</p>
+                </div>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#advertisements">Ads</a></li>
+                    <li id="auth-link-login"><a href="login.html">Login</a></li>
+                    <li id="auth-link-dashboard" style="display:none;"><a href="admin.html">Dashboard</a></li>
+                    <li id="auth-link-logout" style="display:none;"><a href="#" id="logout-btn-nav">Logout</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+
+            <div class="header-extras">
+                <div id="datetime-display" class="datetime"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Hero / Search -->
+        <section id="home" class="hero-section">
+            <h2>Welcome to Your City Portal</h2>
+            <p>Stay updated with the latest news, events, and local business offers.</p>
+            <div class="search-bar">
+                <input type="text" id="news-search" placeholder="Search for news...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section-padding">
+            <div class="section-header">
+                <h2><i class="far fa-newspaper"></i> Latest News</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Politics">Politics</button>
+                    <button class="filter-btn" data-filter="Community">Community</button>
+                    <button class="filter-btn" data-filter="Events">Events</button>
+                </div>
+            </div>
+            <div id="news-grid" class="grid-layout news-grid">
+                <!-- News items will be injected here -->
+            </div>
+        </section>
+
+        <!-- Advertisements Section -->
+        <section id="advertisements" class="section-padding bg-alt">
+            <div class="section-header">
+                <h2><i class="fas fa-ad"></i> Local Marketplace</h2>
+                <p>Support your local businesses</p>
+            </div>
+
+            <div class="featured-ads-container">
+                <h3>Featured</h3>
+                <div id="featured-ads-grid" class="grid-layout featured-grid">
+                    <!-- Featured ads will be injected here -->
+                </div>
+            </div>
+
+            <div class="regular-ads-container">
+                <h3>Latest Offers</h3>
+                <div id="ads-grid" class="grid-layout ads-grid">
+                    <!-- Ads will be injected here -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>CityConnect</h3>
+                <p>Official City Information Portal. Bringing the community together.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Villupuram, Tamil Nadu</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> contact@cityconnect.gov</p>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CityConnect Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

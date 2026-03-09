@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CityConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>CityConnect</h2>
+                <p>Welcome back</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login-form">Login</button>
+                <button class="auth-tab" data-target="signup-form">Sign Up</button>
+            </div>
+
+            <form id="login-form" class="auth-form active">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="signup-username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
+
+            <div id="auth-message" class="auth-message"></div>
+            <p class="back-link"><a href="index.html">Back to Home</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
